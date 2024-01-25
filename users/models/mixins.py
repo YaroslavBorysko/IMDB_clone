@@ -18,12 +18,12 @@ class PersonMixin(models.Model):
     Mixin to include the basic fields for
     specific roles of the user in the application.
     """
+    name = models.CharField(db_index=True, max_length=150, blank=True, verbose_name=_("name"), )
     birthdate = models.DateField(null=True, blank=True, verbose_name="date of birth")
     biography = models.TextField(max_length=5000, verbose_name=_("biography"))
-    user = models.OneToOneField("users.BaseUser", on_delete=models.CASCADE, verbose_name="user")
 
     class Meta:
         abstract = True
 
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        return f"{self.name}"
