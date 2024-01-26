@@ -1,0 +1,24 @@
+{% extends 'movies/movie_detail.html' %}
+{% load static %}
+
+{% block review %}
+
+    <div class="reviews-container">
+        <h2>Reviews</h2>
+        {% if movie.reviews.all %}
+            <div class="review-list">
+            {% for review in movie.reviews.all|slice:":3" %}
+            <div class="review-info">
+                <h2 class="review-autor">{{ review.user.first_name }}</h2>
+                <p class="review-rating">{{ review.rating }}/10</p>
+                <p class="review-text">{{ review.text }}.</p>
+            </div>
+        </div>
+            {% endfor %}
+        {% else %}
+            <p>No reviews yet.</p>
+        {% endif %}
+
+        <a href="{% url 'add_review' movie.id %}" class="add-review-btn">Add a Review</a>
+    </div>
+{% endblock %}
