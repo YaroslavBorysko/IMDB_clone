@@ -9,8 +9,8 @@ class BaseUser(AbstractUser, TimeStampMixin):
     Custom User model that extends Django's built-in AbstractUser model.
     """
 
-    first_name = models.CharField(db_index=True, max_length=150, blank=True, verbose_name=_("first name"),)
-    last_name = models.CharField(db_index=True, max_length=150, blank=True, verbose_name=_("last name"))
+    first_name = models.CharField(db_index=True, max_length=150, verbose_name=_("first name"),)
+    last_name = models.CharField(db_index=True, max_length=150, verbose_name=_("last name"))
     username = models.CharField(max_length=150, null=True, unique=False, verbose_name=_("username"))
     email = models.EmailField(blank=True, unique=True, verbose_name=_("email address"))
 

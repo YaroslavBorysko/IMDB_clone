@@ -20,7 +20,7 @@ class PersonMixin(models.Model):
     """
     name = models.CharField(db_index=True, max_length=150, blank=True, verbose_name=_("name"), )
     birthdate = models.DateField(null=True, blank=True, verbose_name="date of birth")
-    biography = models.TextField(max_length=5000, verbose_name=_("biography"))
+    biography = models.TextField(null=True, blank=True, max_length=5000, verbose_name=_("biography"))
 
     class Meta:
         abstract = True

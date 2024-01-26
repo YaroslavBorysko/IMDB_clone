@@ -1,0 +1,35 @@
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/login.css' %}">
+
+<div class="login-container">
+    <div class="login-main-content">
+        <img src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png">
+        <form method="post">
+
+            {% if request.path == '/users/login/' %}
+            <h2>Sign In</h2>
+            {% elif  request.path == '/users/register/' %}
+            <h2>Sign Up</h2>
+            {% endif %}
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% if request.path == '/users/login/' %}
+            <button class="login-button" type="submit">Login</button>
+            <p id="new-in-imdb">New to IMDb?</p>
+            <a href="{% url 'register' %}" class="register-button">Create your IMDb account</a>
+
+            {% elif  request.path == '/users/register/' %}
+
+            <button class="login-button" type="submit">Sign Up</button>
+            <p id="new-in-imdb">Already have an account?</p>
+            <a href="{% url 'login' %}" class="register-button">Sign In</a>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
