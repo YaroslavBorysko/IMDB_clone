@@ -61,6 +61,7 @@ class Review(UserMovieMixin):
         verbose_name=_("movie rating")
     )
     text = models.TextField(max_length=5000, blank=True, verbose_name=_("text of review for movie"))
+    movie = models.ForeignKey("movies.Movie", on_delete=models.CASCADE, verbose_name=_("movie"))
 
     class Meta:
         unique_together = ("user", "movie")
