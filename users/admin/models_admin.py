@@ -5,15 +5,16 @@ from users.models import Actor, Director, BaseUser
 
 @admin.register(BaseUser)
 class BaseUserAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('username', 'email', 'first_name', 'last_name')
 
 
 @admin.register(Actor)
 class ActorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'birthdate', 'biography')
 
 
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'birthdate', 'biography')
+
 
