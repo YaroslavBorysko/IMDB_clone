@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from users.models import Actor, Director, BaseUser
+from movies.admin import MovieInline
 
 
 @admin.register(BaseUser)
@@ -16,5 +17,6 @@ class ActorAdmin(admin.ModelAdmin):
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):
     list_display = ('name', 'birthdate', 'biography')
+    inlines = (MovieInline,)
 
 

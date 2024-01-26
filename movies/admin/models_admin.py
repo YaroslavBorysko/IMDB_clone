@@ -7,9 +7,11 @@ from movies.models import Movie, Review, Comment
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ('title', 'release_year', 'director', 'total_rating')
-    search_fields = ('title', 'director__first_name', 'director__last_name', 'actor__first_name', 'actor__last_name')
+    search_fields = (
+        'title', 'director__first_name', 'director__last_name', 'actor__first_name', 'actor__last_name'
+    )
     list_filter = ('release_year',)
-    inlines = [ReviewInline, CommentInline, ActorInline]
+    inlines = [ReviewInline, CommentInline]
 
 
 @admin.register(Review)

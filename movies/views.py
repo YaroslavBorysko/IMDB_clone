@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 
 def movies_list(request):
     movies_list = Movie.objects.all()
-    items_per_page = 4
+    items_per_page = 12
     paginator = Paginator(movies_list, items_per_page)
 
     page = request.GET.get('page')

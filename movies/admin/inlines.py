@@ -5,28 +5,20 @@ from movies.models import Review, Comment, Movie
 
 class ReviewInline(admin.TabularInline):
     model = Review
-    extra = 1
+    extra = 0
 
 
 class CommentInline(admin.TabularInline):
     model = Comment
-    extra = 1
+    extra = 0
 
 
 class ActorInline(admin.TabularInline):
     model = Movie.actors.through
-    extra = 1
-
-    class Meta:
-        verbose_name = "Actor"
-        verbose_name_plural = "Actors"
+    extra = 0
 
 
-# class DirectorInline(admin.StackedInline):
-#     model = Movie
-#     fk_name = "director"
-#     extra = 1
-#
-#     class Meta:
-#         verbose_name = "Director"
-#         verbose_name_plural = "Directors"
+class MovieInline(admin.TabularInline):
+    model = Movie
+    extra = 0
+    fields = ("title", "release_year", "poster_image")
