@@ -34,6 +34,14 @@ class Movie(models.Model):
         return "ss"
 
     @property
+    def truncated_title(self):
+        max_length = 20
+        if len(self.title) > max_length:
+            return self.title[:max_length] + "..."
+        else:
+            return self.title
+
+    @property
     def total_rating(self):
         avg_rating = self.review_set.aggregate(
             avg_sum_of_fields=Coalesce(models.Avg(

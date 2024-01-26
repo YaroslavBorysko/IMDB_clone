@@ -1,5 +1,6 @@
 from django.contrib import admin
-from users.models import BaseUser, Director, Actor
+
+from users.models import BaseUser, Director
 
 
 class BaseUserInline(admin.TabularInline):
@@ -7,6 +8,7 @@ class BaseUserInline(admin.TabularInline):
     extra = 0
     fields = ("email", "first_name", "last_name")
     show_change_link = True
+
 
 #
 # class ActorInline(admin.TabularInline):
