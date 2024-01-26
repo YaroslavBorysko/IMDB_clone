@@ -1,0 +1,16 @@
+{% extends 'movies/../base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/edit_user.css' %}">
+    <div class="container">
+    <h2>Edit Profile</h2>
+        <form action="" method="post" class="edit-profile-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My IMDb{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+{% include "navbar.html" %}
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About IMDb</h3>
+            <p>IMDb is the world's most popular and authoritative source for movie, TV, and celebrity content. Find
+                ratings and reviews for the newest movie and TV shows.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Celebrities</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <p><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+        </div>
+    </div>
+</footer>
+</body>
