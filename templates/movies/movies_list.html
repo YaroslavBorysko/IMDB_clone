@@ -13,12 +13,57 @@
             src="{{ movie.poster_image.url }}"
             >
             <div class="movie-info">
-                <h2 class="movie-title">{{ movie.title }}</h2>
+                <h2 class="movie-title">{{ movie.truncated_title }}</h2>
                 <p class="movie-rating">{{ movie.total_rating }}/10</p>
                 <p class="movie-description">{{ movie.release_year }}.</p>
             </div>
         </div>
 
     {% endfor %}
+
 </div>
+<ul class="pagination">
+    {% if movies.has_previous %}
+        <li class="pagination__item">
+            <a href="?page=1">1</a>
+        </li>
+       {% if movies.number|add:'-1' > 1 %}
+            <li class="pagination__item pagination__item--dots">
+                    <a href="?{{ genre }}{{ year }}page={{ movies.previous_page_number}}">
+                <span class="pagination__link">• • •</span>
+                </a>
+            </li>
+        {% endif %}
+    {% endif %}
+    {% if movies.paginator.page_range|length > 1 %}
+        {% for i in movies.paginator.page_range %}
+            {% if movies.number == i %}
+                <li class="pagination__item active">
+                    <a class="pagination__link" href="#">{{ i }}</a>
+                </li>
+            {% elif i > movies.number|add:'-1' and i < movies.number|add:'2' %}
+                <li class="pagination__item">
+                    <a class="pagination__link" href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if movies.has_next %}
+        {% if movies.number|add:'2' < movies.paginator.num_pages %}
+            <li class="pagination__item pagination__item--dots">
+                    <a href="?{{ genre }}{{ year }}page={{ movies.next_page_number|add:'2' }}">
+                <span class="pagination__link">• • •</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if movies.number|add:'1' < movies.paginator.num_pages %}
+            <li class="pagination__item">
+                <a class="pagination__link" href="?page={{ movies.paginator.num_pages }}">
+                    {{ movies.paginator.num_pages }}
+                </a>
+            </li>
+        {% endif %}
+    {% endif %}
+</ul>
+
 {% endblock %}
