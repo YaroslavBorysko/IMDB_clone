@@ -27,7 +27,11 @@ def movies_list(request):
 def movie_details(request, pk):
 
     movie = get_object_or_404(Movie, pk=pk)
+    is_user_reviewed = request.user in [
+        review.user for review in
+        movie.review_set.all()
+    ]
     return render(
         request, 'movies/movie_detail.html',
-        context={'movie': movie}
+        context={'movie': movie, 'is_reviewed': is_user_reviewed}
     )

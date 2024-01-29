@@ -3,25 +3,33 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'movies/css/movie_details.css' %}">
-<div class="movie-list">
-    <div class="movie-detail-container">
-        <div class="movie-poster">
-            <img src="{{ movie.poster_image.url }}" alt="Movie Poster">
-        </div>
-        <div class="movie-info">
-            <h1 class="movie-title">{{ movie.title }}</h1>
-            <p class="movie-year">{{ movie.release_year }}</p>
-            <p class="movie-director">{{ movie.director}}</p>
-            <p class="movie-cast">Cast:
-                {% for actor in movie.actors.all %}
-                {{ actor.name }}
-                {% endfor %}
-            </p>
-            <p class="movie-description">{{ movie.plot }}</p>
-        </div>
+<div class="movie-detail-page-container">
+<div class="movie-detail-container">
+    <div class="movie-poster">
+        <img src="{{ movie.poster_image.url }}" alt="Movie Poster">
+    </div>
+    <div class="movie-info">
+        <h1 class="movie-title">{{ movie.title }}</h1>
+        <p class="movie-year">{{ movie.release_year }}</p>
+        <p class="movie-director">{{ movie.director}}</p>
+        <p class="movie-cast">Cast:
+            {% for actor in movie.actors.all %}
+            {{ actor.name }}
+            {% endfor %}
+        </p>
+        <p class="movie-description">{{ movie.plot }}</p>
     </div>
 </div>
-    {% block review %}
-    {% endblock %}
+{#{% include 'movies/discussion_dashboard.html' %}#}
+</div>
+    <div class="movie-btn">
+    {% if is_reviewed %}
+    <h3>You already reviewed this movie</h3>
+    {% else %}
+    <button class="add-review-btn">Add review</button>
+    {% endif %}
+
+    </div>
+{% include 'movies/reviews.html' %}
 {% endblock %}
 

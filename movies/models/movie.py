@@ -67,7 +67,7 @@ class Review(UserMovieMixin):
         unique_together = ("user", "movie")
 
     def __str__(self):
-        return f"{self.user.first_name} - {self.movie.title}"
+        return f"{self.user.email} - {self.movie.title}"
 
 
 class Comment(UserMovieMixin):
