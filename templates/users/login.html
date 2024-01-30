@@ -7,28 +7,35 @@
 
 <div class="login-container">
     <div class="login-main-content">
-        <img src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png">
+        <img src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+             alt="IMDb Logo">
         <form method="post">
 
             {% if request.path == '/users/login/' %}
             <h2>Sign In</h2>
-            {% elif  request.path == '/users/register/' %}
+            {% elif request.path == '/users/register/' %}
             <h2>Sign Up</h2>
             {% endif %}
 
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.as_div }}
 
             {% if request.path == '/users/login/' %}
-            <button class="login-button" type="submit">Login</button>
-            <p id="new-in-imdb">New to IMDb?</p>
-            <a href="{% url 'register' %}" class="register-button">Create your IMDb account</a>
+            <button class="login-button">Login</button>
+            <p class="new-in-imdb">New to IMDb?</p>
+            <button>
+                <a href="{% url 'register' %}" class="register-button">Create your IMDb account</a>
+            </button>
 
-            {% elif  request.path == '/users/register/' %}
 
-            <button class="login-button" type="submit">Sign Up</button>
-            <p id="new-in-imdb">Already have an account?</p>
-            <a href="{% url 'login' %}" class="register-button">Sign In</a>
+            {% elif request.path == '/users/register/' %}
+
+            <button class="login-button">Sign Up</button>
+            <p class="new-in-imdb">Already have an account?</p>
+            <button>
+                <a href="{% url 'login' %}" class="register-button">Sign In</a>
+            </button>
+
             {% endif %}
         </form>
     </div>

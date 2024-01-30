@@ -1,9 +1,29 @@
+{% extends 'movies/../base.html' %}
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'movies/css/discussion_dashboard.css' %}">
-    <div class="dashboard">
-    <h2>Movie discussion</h2>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <div class="dashboard-page">
+        <form class="add-comment" method="POST">
+            {% csrf_token %}
+            <h2 class="add-comment-title">Add comment</h2>
+            {{ form.text }}
+            <button type="submit" class="send-comment">Send</button>
+        </form>
+
+        <div class="review-list">
+            {% for comment in comments %}
+
+                <div class="review-info">
+                    <h2 class="review-autor">{{ comment.user.email }} ({{ comment.user.discussion_dedication }})</h2>
+
+                    <p class="review-text">
+                        {{ comment.text }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
 
 {% endblock %}

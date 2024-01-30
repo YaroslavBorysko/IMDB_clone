@@ -1,6 +1,6 @@
-.container {
+.edit-user-container{
     width: 50%;
-    margin: 20px auto;
+    margin: 100px auto 300px auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

@@ -1,8 +1,13 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+import json
 
-from movies.models import Movie
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect
+
+from movies.forms import CommentForm
+from movies.models import Movie, Review, Comment
+from users.models import BaseUser
 
 
 def movies_list(request):
@@ -25,7 +30,6 @@ def movies_list(request):
 
 
 def movie_details(request, pk):
-
     movie = get_object_or_404(Movie, pk=pk)
     is_user_reviewed = request.user in [
         review.user for review in
@@ -34,4 +38,40 @@ def movie_details(request, pk):
     return render(
         request, 'movies/movie_detail.html',
         context={'movie': movie, 'is_reviewed': is_user_reviewed}
+    )
+
+
+def create_movie_review(request, pk):
+    if request.method == 'POST':
+        movie = get_object_or_404(Movie, pk=pk)
+        json_data = json.loads(request.body.decode('utf-8'))
+        rating = json_data.get('rating')
+        text = json_data.get('text')
+        user = get_object_or_404(BaseUser, pk=json_data.get('user_id'))
+        Review.objects.create(
+            movie=movie, rating=rating,
+            text=text, user=user
+        )
+
+        return HttpResponse('Form submitted successfully')
+
+    return render(request, 'movies/reviews.html')
+
+
+def dashboard(request):
+    comments = Comment.objects.all()
+    if request.method == 'POST':
+        form = CommentForm(request.POST, user=request.user)
+        print(form.errors)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = form.user
+            instance.save()
+
+        return redirect('dashboard')
+    else:
+        form = CommentForm()
+    return render(
+        request, 'movies/discussion_dashboard.html',
+        {'form': form, 'comments': comments}
     )

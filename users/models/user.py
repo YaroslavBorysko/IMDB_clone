@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from users.models.mixins import TimeStampMixin, PersonMixin
+from movies.models import Comment
 
 
 class BaseUser(AbstractUser, TimeStampMixin):
@@ -19,6 +20,10 @@ class BaseUser(AbstractUser, TimeStampMixin):
 
     def __str__(self):
         return f"{self.username}({self.email})"
+    
+    @property
+    def discussion_dedication(self):
+        return len(Comment.objects.filter(user=self))
 
 
 class Actor(PersonMixin):

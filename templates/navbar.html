@@ -2,22 +2,25 @@
 
 
 <link rel="stylesheet" type="text/css" href="{% static 'movies/css/navbar.css' %}">
-<div class="navbar">
+<header class="navbar">
     <div class="navbar-logo">
         <a href="{% url 'movies_list' %}">
-            <img src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png" alt="IMDb Logo">
+            <img src="https://m.media-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+                 alt="IMDb Logo">
         </a>
     </div>
 
-    <div class="navbar-links">
-            {% if user.is_authenticated %}
-            <!-- Links for logged-in users -->
-            <a href="{% url 'profile' %}">{{ user.email }}</a>
-            <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-            <!-- Links for guests -->
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}">Register</a>
-            {% endif %}
-    </div>
-</div>
+    <nav class="navbar-links">
+        {% if user.is_authenticated %}
+        <!-- Links for logged-in users -->
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'profile' %}">{{ user.email }}</a>
+        <a href="{% url 'logout' %}">Logout</a>
+
+        {% else %}
+        <!-- Links for guests -->
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+</header>

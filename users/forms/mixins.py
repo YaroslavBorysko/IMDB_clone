@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.hashers import make_password
 
 
 class ConfirmPasswordMixinForm(forms.ModelForm):
@@ -13,5 +14,6 @@ class ConfirmPasswordMixinForm(forms.ModelForm):
 
         if password and password_confirm and password != password_confirm:
             self.add_error('password_confirm', "Password and Confirm Password do not match")
+        cleaned_data['password'] = make_password(password)
 
         return cleaned_data

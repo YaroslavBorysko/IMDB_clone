@@ -3,14 +3,24 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'movies/css/review.css' %}">
 <div class="reviews-container">
-    <h2>Reviews</h2>
+    <h2 class="reviews-title">Reviews</h2>
     {% if movie.review_set.exists %}
-        <div class="review-list">
+    <div class="review-list">
         {% for review in movie.review_set.all %}
         <div class="review-info">
-            <h2 class="review-autor">{{ review.user.email }}</h2>
-            <p class="review-rating">{{ review.rating }}/10</p>
-            <p class="review-text">{{ review.text }}.</p>
+
+            <h2 class="review-autor">{{ review.user.name }}</h2>
+            <div class="review-rating">
+                <div class="rating-wrapper">
+                    <img src="https://www.svgrepo.com/show/13695/star.svg" alt="rating">
+                </div>
+
+                <p>{{ review.rating }}/10</p>
+            </div>
+
+            <p class="review-text">
+                {{ review.text }}
+            </p>
         </div>
         {% endfor %}
     </div>

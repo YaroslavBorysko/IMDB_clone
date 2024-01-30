@@ -35,7 +35,7 @@ The project is deployed using Docker Compose. To run it, follow these steps:
 The project includes a Django command for importing movies from IMDb. To perform the import, use the following command:
 
 ```bash
-docker-compose exec app python manage.py import_movies
+python manage.py import_movies
 ```
 The command will fetch movies from IMDb, save them to the database, and display a success message.
 
@@ -44,7 +44,7 @@ The command will fetch movies from IMDb, save them to the database, and display 
 To create a Django superuser, use the following command:
 
 ```bash
-docker-compose exec app python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 Follow the instructions to enter the username, email, and password.
 
@@ -52,22 +52,15 @@ Follow the instructions to enter the username, email, and password.
 
 ## To update Python dependencies, run:
 ```bash
-docker-compose exec app pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## To migrate the database, run:
 
 ```bash
-docker-compose exec app python manage.py migrate
+python manage.py migrate
 ```
 Adjust Nginx configuration in the nginx folder according to your needs.
 
-If you make changes to movie models, don't forget to create and apply migrations:
 
-```bash
-docker-compose exec app python manage.py makemigrations
-docker-compose exec app python manage.py migrate
-```
-
-This serves as a basic guide for deploying and using your Django IMDb Clone project. 
 # We hope you find it helpful!

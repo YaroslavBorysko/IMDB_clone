@@ -1,0 +1,439 @@
+[
+{
+    "model": "users.baseuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$qNGJL2bWjwX2oZYbubJKkH$g2vu/41fmTdf2MQ7rCR+CeYhrO8Z76+X4D3+ZwjWw6M=",
+        "last_login": "2024-01-30T08:27:07.513Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-01-25T20:03:13.256Z",
+        "created_on": "2024-01-25T20:03:13.371Z",
+        "updated_on": "2024-01-26T13:45:32.528Z",
+        "first_name": "yfsdf",
+        "last_name": "fasfasf",
+        "username": "admin",
+        "email": "admin@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.actor",
+    "pk": 1,
+    "fields": {
+        "name": "Billy Bob Thornton",
+        "birthdate": "2024-01-25",
+        "biography": "йцвйцвйцв"
+    }
+},
+{
+    "model": "users.actor",
+    "pk": 2,
+    "fields": {
+        "name": "Yaroslav Borysko",
+        "birthdate": "2024-01-30",
+        "biography": ""
+    }
+},
+{
+    "model": "users.actor",
+    "pk": 3,
+    "fields": {
+        "name": "George Abbott",
+        "birthdate": "2024-01-30",
+        "biography": ""
+    }
+},
+{
+    "model": "users.actor",
+    "pk": 4,
+    "fields": {
+        "name": "Ben Affleck",
+        "birthdate": "2024-01-30",
+        "biography": ""
+    }
+},
+{
+    "model": "users.actor",
+    "pk": 5,
+    "fields": {
+        "name": "Fred Allen",
+        "birthdate": null,
+        "biography": ""
+    }
+},
+{
+    "model": "users.director",
+    "pk": 1,
+    "fields": {
+        "name": "Noah Hawley",
+        "birthdate": "2023-02-06",
+        "biography": "qwdqwdqw"
+    }
+},
+{
+    "model": "users.director",
+    "pk": 2,
+    "fields": {
+        "name": "Robert Kirkman",
+        "birthdate": "2023-03-14",
+        "biography": ""
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 1,
+    "fields": {
+        "title": "Fargo",
+        "plot": "The all new \"true crime\" case of Fargo's new chapter travels back to 1979 in Sioux Falls, South Dakota and Luverne, Minnesota, where a young State Police Officer Lou Solverson, recently back from Vietnam, investigates a case involving a local crime gang and a major Mob syndicate. Helping him piece things together is his father-in-law, Sheriff Hank Larsson.",
+        "director": 1,
+        "release_year": 2014,
+        "poster_image": "posters/MV5BNTQ2NWZhM2UtZmJhOS00MDIwLTk2YmYtYmMxNjcyM2IwM2ZjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+        "actors": [
+            1
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 2,
+    "fields": {
+        "title": "Fast & Furious",
+        "plot": "wdqwdqw",
+        "director": 1,
+        "release_year": 2009,
+        "poster_image": "posters/MV5BZmQ3MGIzNzAtNjFiMS00MGI4LWE3NGItNDM4MjAxYmI4ZTkxXkEyXkFqcGdeQXVyNjkwOTQ4MDE._V1_.jpg",
+        "actors": [
+            1
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 3,
+    "fields": {
+        "title": "The Bear",
+        "plot": "Carmen Berzatto, a brilliant young chef from the fine-dining world is forced to return home to run his local family sandwich shop - the Original Beef of Chicagoland - after a heartbreaking death in his family. A world away from what he's used to, Carmy must balance the soul-crushing reality of trading in Michelin star restaurants for the small 'business' kitchen filled with strong-willed and obstinate staff and his strained familial relationships, all while grappling with the impact of his brother's suicide.",
+        "director": 1,
+        "release_year": 2022,
+        "poster_image": "posters/14452776_poster.jpg",
+        "actors": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 4,
+    "fields": {
+        "title": "The Beekeeper",
+        "plot": "",
+        "director": 2,
+        "release_year": 2024,
+        "poster_image": "posters/15314262_poster.jpg",
+        "actors": [
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 5,
+    "fields": {
+        "title": "The Holdovers",
+        "plot": "Nobody likes teacher Paul Hunham (Giamatti) -- not his students, not his fellow faculty, not the headmaster, who all find his pomposity and rigidity exasperating. With no family and nowhere to go over Christmas holiday in 1970, Paul remains at school to supervise students unable to journey home. After a few days, only one student holdover remains -- a trouble-making 18-year-old named Angus, a good student whose bad behavior always threatens to get him expelled. Joining Paul and Angus is head cook Mary (Randolph)-an African American woman who caters to sons of privilege and whose own son was recently lost in Vietnam. These three very different shipwrecked people form an unlikely Christmas family sharing comic misadventures during two very snowy weeks in New England. The real journey is how they help one another understand that they are not beholden to their past-they can choose their own futures.",
+        "director": 1,
+        "release_year": 2023,
+        "poster_image": "posters/14849194_poster.jpg",
+        "actors": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 6,
+    "fields": {
+        "title": "The Brothers Sun",
+        "plot": "The series follows a Taipei gangster, Charles Sun, who's settled into his life as a ruthless killer. But when his father is shot by a mysterious assassin, Charles must go to L.A. to protect his mother and utterly-unaware younger brother Bruce.",
+        "director": 1,
+        "release_year": 2024,
+        "poster_image": "posters/17632862_poster.jpg",
+        "actors": [
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 7,
+    "fields": {
+        "title": "The Sopranos",
+        "plot": "An innovative look at the life of fictional Mafia Capo Tony Soprano, this serial is presented largely first person, but additional perspective is conveyed by the intimate conversations Tony has with his psychotherapist. We see Tony at work, at home, and in therapy. Moments of black comedy intersperse this aggressive, adult drama, with adult language, and extreme violence.",
+        "director": 1,
+        "release_year": 1999,
+        "poster_image": "posters/0141842_poster.jpg",
+        "actors": [
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 8,
+    "fields": {
+        "title": "The Boys",
+        "plot": "The world's most powerful superheroes ('Supes') are secretly bending society to its whims, until the underdog team 'The Boys', victims of the 'Supes', conjure up a plan to take down 'The Seven' and 'Vought International' once and for all. Fighting a never ending conspiracy of corporate espionage, deep-cutting secrets and nigh-Godly figures, 'The Boys' will do whatever it takes to save the world from its corrupt 'superheroes' before they become unstoppable--or die trying.",
+        "director": 1,
+        "release_year": 2019,
+        "poster_image": "posters/1190634_poster.jpg",
+        "actors": [
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 9,
+    "fields": {
+        "title": "The Gentlemen",
+        "plot": "The series follows Eddie Halstead, who has inherited his father's sizeable estate only to discover that it's sitting on top of a weed empire owned by the legendary Mickey Pearson. Has this straight-up soldier got what it takes to master the dark arts of the British criminal underworld and take control of the entire operation?",
+        "director": 1,
+        "release_year": 2024,
+        "poster_image": "posters/13210838_poster.jpg",
+        "actors": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 10,
+    "fields": {
+        "title": "The Crown",
+        "plot": "This show focuses on Queen Elizabeth II as a young newlywed faced with leading the world's most famous monarchy while forging a relationship with legendary Prime Minister Sir Winston Churchill. The British Empire is in decline, the political world is in disarray, but a new era is dawning. Peter Morgan's masterfully-researched scripts reveal the Queen's private journey behind the public façade with daring frankness. Prepare to see into the coveted world of power and privilege behind the locked doors of Westminster and Buckingham Palace.",
+        "director": 2,
+        "release_year": 2016,
+        "poster_image": "posters/4786824_poster.jpg",
+        "actors": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 11,
+    "fields": {
+        "title": "The Iron Claw",
+        "plot": "The true story of the inseparable Von Erich brothers, who made history in the intensely competitive world of professional wrestling in the early 1980s. Through tragedy and triumph, under the shadow of their domineering father and coach, the brothers seek larger-than-life immortality on the biggest stage in sports.",
+        "director": 2,
+        "release_year": 2023,
+        "poster_image": "posters/21064584_poster.jpg",
+        "actors": [
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 12,
+    "fields": {
+        "title": "The Boys in the Boat",
+        "plot": "The Boys in the Boat is a sports drama based on the #1 New York Times bestselling non-fiction novel written by Daniel James Brown. The film, directed by George Clooney, is about the 1936 University of Washington rowing team that competed for gold at the Summer Olympics in Berlin. This inspirational true story follows a group of underdogs at the height of the Great Depression as they are thrust into the spotlight and take on elite rivals from around the world.",
+        "director": 1,
+        "release_year": 2023,
+        "poster_image": "posters/1856080_poster.jpg",
+        "actors": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 13,
+    "fields": {
+        "title": "The Walking Dead",
+        "plot": "Sheriff Deputy Rick Grimes gets shot and falls into a coma. When awoken he finds himself in a Zombie Apocalypse. Not knowing what to do he sets out to find his family, after he's done that, he gets connected to a group to become the leader. He takes charge and tries to help this group of people survive, find a place to live and get them food. This show is all about survival, the risks and the things you'll have to do to survive.",
+        "director": 2,
+        "release_year": 2010,
+        "poster_image": "posters/1520211_poster.jpg",
+        "actors": [
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 14,
+    "fields": {
+        "title": "The White Lotus",
+        "plot": "An all-star cast heads to a resort to unleash their worst, most privileged impulses. The series is a sharp social satire following the exploits of various guests and employees of the fictional White Lotus resort chain, whose stay becomes affected by their various dysfunctions. A week in the life of vacationers unravels as they relax and rejuvenate in paradise; with each passing day, a darker complexity emerges in these picture-perfect travelers, the hotel's cheerful employees, and the idyllic locale itself.",
+        "director": 1,
+        "release_year": 2021,
+        "poster_image": "posters/13406094_poster.jpg",
+        "actors": [
+            2
+        ]
+    }
+},
+{
+    "model": "movies.movie",
+    "pk": 15,
+    "fields": {
+        "title": "The Marvels",
+        "plot": "Carol Danvers AKA Captain Marvel has reclaimed her identity from the tyrannical Kree and taken revenge on the Supreme Intelligence. But unintended consequences see Carol shouldering the burden of a destabilized universe. When her duties send her to an anomalous wormhole linked to a Kree revolutionary, her powers become entangled with that of Jersey City super-fan Kamala Khan, aka Ms. Marvel, and Carol's estranged niece, now S.A.B.E.R. astronaut Captain Monica Rambeau.",
+        "director": 1,
+        "release_year": 2023,
+        "poster_image": "posters/10676048_poster.jpg",
+        "actors": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "rating": 5,
+        "text": "This is review",
+        "movie": 1
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "rating": 5,
+        "text": "Nice",
+        "movie": 3
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "rating": 10,
+        "text": "test",
+        "movie": 5
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "rating": 6,
+        "text": "This is review",
+        "movie": 11
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "rating": 7,
+        "text": "test",
+        "movie": 10
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 8,
+    "fields": {
+        "user": 1,
+        "rating": 6,
+        "text": "Review text",
+        "movie": 14
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 9,
+    "fields": {
+        "user": 1,
+        "rating": 7,
+        "text": "Nice",
+        "movie": 8
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 12,
+    "fields": {
+        "user": 1,
+        "rating": 10,
+        "text": "Comment",
+        "movie": 12
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 1,
+    "fields": {
+        "text": "Nice movie",
+        "user": 1
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 2,
+    "fields": {
+        "text": "Nice",
+        "user": 1
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 3,
+    "fields": {
+        "text": "Not recommended",
+        "user": 1
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 4,
+    "fields": {
+        "text": "Good",
+        "user": 1
+    }
+},
+{
+    "model": "movies.comment",
+    "pk": 5,
+    "fields": {
+        "text": "Nice Movie",
+        "user": 1
+    }
+}
+]

@@ -30,10 +30,6 @@ class Movie(models.Model):
         return self.title
 
     @property
-    def test(self):
-        return "ss"
-
-    @property
     def truncated_title(self):
         max_length = 20
         if len(self.title) > max_length:
@@ -70,11 +66,12 @@ class Review(UserMovieMixin):
         return f"{self.user.email} - {self.movie.title}"
 
 
-class Comment(UserMovieMixin):
+class Comment(models.Model):
     """
     Represents a movie comment in the database, encompassing details and optional comments.
     """
     text = models.TextField(max_length=5000, blank=True, verbose_name=_("text"))
+    user = models.ForeignKey("users.BaseUser", on_delete=models.CASCADE, verbose_name=_("user"))
 
     def __str__(self):
-        return f"{self.user.first_name} - {self.movie.title}"
+        return f"Comment by {self.user.first_name}"

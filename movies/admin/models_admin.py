@@ -11,7 +11,7 @@ class MovieAdmin(admin.ModelAdmin):
         'title', 'director__first_name', 'director__last_name', 'actor__first_name', 'actor__last_name'
     )
     list_filter = ('release_year',)
-    inlines = [ReviewInline, CommentInline]
+    inlines = [ReviewInline]
 
 
 @admin.register(Review)
@@ -23,5 +23,5 @@ class ReviewAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'movie', 'text')
-    search_fields = ('user__first_name', 'user__last_name', 'movie__title')
+    list_display = ('user', 'text')
+    search_fields = ('user__first_name', 'user__last_name')
