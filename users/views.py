@@ -8,7 +8,6 @@ from users.forms import UserRegisterForm, UserUpdateForm
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        print(form.errors)
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')

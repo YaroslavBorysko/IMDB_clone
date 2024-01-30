@@ -62,7 +62,6 @@ def dashboard(request):
     comments = Comment.objects.all()
     if request.method == 'POST':
         form = CommentForm(request.POST, user=request.user)
-        print(form.errors)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = form.user
