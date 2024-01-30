@@ -28,7 +28,7 @@ The project is deployed using Docker Compose. To run it, follow these steps:
    docker-compose up --build
    ```
 
-### After a successful launch, your application will be available at http://localhost:8080.
+### After a successful launch, your application will be available at http://localhost.
 
 ## Importing Movies from IMDb
 
