@@ -1,0 +1,27 @@
+/*recommendations styles*/
+
+.recommendations-page {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.genres-container,
+.year {
+    font-size: 20px;
+}
+
+.genres-container {
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+
+}
+
+.year {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

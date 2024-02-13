@@ -29,7 +29,7 @@ $textArea.addEventListener('change', (e) => {
     reviewValue = e.target.value
 })
 
-$form.addEventListener('submit', (e) => {
+$form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     let currentRating = null
@@ -39,12 +39,12 @@ $form.addEventListener('submit', (e) => {
         }
     })
 
-    if(!currentRating) return
+    if (!currentRating) return
 
     try {
         const currentUrl = window.location.href;
         const crf_token = document.getElementsByName('csrfmiddlewaretoken')[0].getAttribute('value');
-        const response =  fetch(`${currentUrl}review-create/`, {
+        await fetch(`${currentUrl}review-create/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,16 +56,13 @@ $form.addEventListener('submit', (e) => {
                 'user_id': userData
             }),
         });
-            setTimeout(() => {
-                window.location.reload()
-
-    }, 1000);
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000);
 
     } catch (error) {
         alert(error);
     }
-
-
 
 
 })

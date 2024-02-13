@@ -4,6 +4,7 @@ from movies.models import Movie
 from django.core.files.base import ContentFile
 import requests
 
+
 class Command(BaseCommand):
     help = 'Import movies from IMDb'
 

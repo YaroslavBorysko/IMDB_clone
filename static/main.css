@@ -254,9 +254,14 @@ fieldset.star-rating.hidelabels label {
     text-align: end;
 }
 
-.add-comment-title {
+.add-comment-title,
+.recommendations-title {
     font-size: 24px;
     text-align: start;
+}
+
+.recommendations-title {
+    margin-bottom: 20px;
 }
 
 .add-comment-field {
@@ -275,5 +280,3 @@ fieldset.star-rating.hidelabels label {
     border-radius: 4px;
     border: none;
 }
-
-
