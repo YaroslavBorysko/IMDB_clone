@@ -78,15 +78,21 @@ def dashboard(request):
 
 def create_movie_recommendation(request):
     if request.method == 'POST':
-        json_data = json.loads(request.body.decode('utf-8'))
+        json_data = request.POST
         genre = json_data.get('genre')
         start_date = json_data.get('start_date')
         end_date = json_data.get('end_date')
         description = json_data.get('description')
 
-        return JsonResponse({'title': 'The Blair Witch Project',
-                             'plot': "In search of a local legend, three bold amateur documentarians--director, Heather; cameraman, Josh; sound recorder, Mike--hike into Burkittsville's gloomy Black Hills Forest to find a shadow: the fabled Blair Witch. Now, one long year later--after that fateful October of 1994--there's still no sign of the student filmmakers, apart from the raw footage they left behind. Who knows what truly happened during their creepy five-day journey into the mouth of madness? Was there, indeed, an intangible supernatural presence in the dark woods that led to the team's disappearance? Either way, the missing trio must have seen something. Could the nightmarish myth be real?",
-                             'release_year': 1999,
-                             'poster_url': 'https://m.media-amazon.com/images/M/MV5BNzQ1NDBlNDItMDAyYS00YTI2LTgwMmYtMzAwMzg4NDFlM2ZmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX101_CR0,0,101,150_.jpg'})
+        # movie = MovieRecommendation(
+        #     genre=genre, start_date=start_date,
+        #     end_date=end_date, description=description
+        # )
+
+        return JsonResponse({"title": "The Blair Witch Project",
+                             "plot": " must have seen something. Could the nightmarish myth be real?",
+                             "release_year": 1999,
+                             "poster_url": "https://m.media-amazon.com/images/M/MV5BNzQ1NDBlNDItMDAyYS00YTI2LTgwMmYtMzAwMzg4NDFlM2ZmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX101_CR0,0,101,150_.jpg"
+})
 
     return render(request, 'movies/recommendation_form.html')
