@@ -22,6 +22,7 @@ The project is deployed using Docker Compose. To run it, follow these steps:
    AWS_SECRET_ACCESS_KEY=your_aws_access_key
    AWS_STORAGE_BUCKET_NAME=your_aws_storage_bucket_name
    AWS_S3_REGION_NAME=your_s3_region_name
+   OPENAI_API_KEY=your_open_ai_api_key
 ## Start the project with the following command:
 
    ```bash

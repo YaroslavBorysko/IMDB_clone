@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 
 from movies.forms import CommentForm
 from movies.models import Movie, Review, Comment
+from movies.movie_recommendation import MovieRecommendation
 from users.models import BaseUser
 
 
@@ -78,21 +79,12 @@ def dashboard(request):
 
 def create_movie_recommendation(request):
     if request.method == 'POST':
-        json_data = request.POST
-        genre = json_data.get('genre')
-        start_date = json_data.get('start_date')
-        end_date = json_data.get('end_date')
-        description = json_data.get('description')
+        json_data = json.loads(request.body.decode('utf-8'))
 
-        # movie = MovieRecommendation(
-        #     genre=genre, start_date=start_date,
-        #     end_date=end_date, description=description
-        # )
+        movie = MovieRecommendation(
+            **json_data
+        ).handle()
 
-        return JsonResponse({"title": "The Blair Witch Project",
-                             "plot": " must have seen something. Could the nightmarish myth be real?",
-                             "release_year": 1999,
-                             "poster_url": "https://m.media-amazon.com/images/M/MV5BNzQ1NDBlNDItMDAyYS00YTI2LTgwMmYtMzAwMzg4NDFlM2ZmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX101_CR0,0,101,150_.jpg"
-})
+        return JsonResponse(movie)
 
     return render(request, 'movies/recommendation_form.html')

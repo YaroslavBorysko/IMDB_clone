@@ -19,9 +19,60 @@
 
 }
 
+.years-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.years-container > div {
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.years-container label {
+    display: block;
+
+    text-align: left;
+}
+
 .year {
     width: 100%;
     padding: 5px;
     margin-top: 10px;
     border-radius: 5px;
+}
+.film-wrapper {
+    margin-top: 20px;
+}
+
+
+.film-content__wrapper {
+    text-align: left;
+}
+
+.film-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.film-plot {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #444444;
+}
+
+.film-content__flex-wrapper {
+    display: flex;
+}
+
+.film-poster__wrapper {
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+}
+
+.film-poster {
+    height: 100%;
+    object-fit: cover;
 }

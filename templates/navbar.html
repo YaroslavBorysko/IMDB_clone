@@ -13,6 +13,7 @@
     <nav class="navbar-links">
         {% if user.is_authenticated %}
         <!-- Links for logged-in users -->
+        <a href="{% url 'recommendation' %}">Recommendation</a>
         <a href="{% url 'dashboard' %}">Dashboard</a>
         <a href="{% url 'profile' %}">{{ user.email }}</a>
         <a href="{% url 'logout' %}">Logout</a>
